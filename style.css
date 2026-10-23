@@ -332,6 +332,59 @@ h2 {
 .footer > span:first-child { font-weight: 700; letter-spacing: 1px; }
 .footer-dot { margin: 0 4px; color: #b6c5b9; }
 
+.partnership-section {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 60px;
+  margin: 0 0 58px;
+  padding: 38px 42px;
+  border: 1px solid #e6ece6;
+  border-radius: 22px;
+  background: rgb(255 255 255 / 72%);
+}
+
+.partnership-intro h2 { margin-bottom: 12px; }
+.partnership-intro > p:last-child { color: var(--muted); font-size: 13px; line-height: 1.8; }
+
+.partnership-form { display: grid; grid-template-columns: 1fr; gap: 9px; }
+.partnership-form label { margin-top: 5px; color: #53665a; font-size: 11px; font-weight: 700; }
+.partnership-form input,
+.partnership-form textarea {
+  width: 100%;
+  padding: 12px 13px;
+  border: 1px solid #e1e8e1;
+  border-radius: 10px;
+  outline: none;
+  color: var(--ink);
+  background: #fbfcfb;
+  font: inherit;
+  font-size: 12px;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+.partnership-form textarea { resize: vertical; min-height: 100px; }
+.partnership-form input:focus,
+.partnership-form textarea:focus { border-color: #70a181; box-shadow: 0 0 0 3px rgb(112 161 129 / 14%); }
+.partnership-form input::placeholder,
+.partnership-form textarea::placeholder { color: #a6b0a8; }
+.submit-button {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 7px;
+  border: 0;
+  border-radius: 11px;
+  color: white;
+  background: var(--green);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  transition: background 160ms ease, transform 160ms ease;
+}
+.submit-button:hover { transform: translateY(-1px); background: var(--green-dark); }
+.submit-button:focus-visible { outline: 3px solid #e0aa48; outline-offset: 3px; }
+
 @media (max-width: 900px) {
   .page-shell { width: min(760px, calc(100% - 40px)); }
   .hero { min-height: 410px; padding: 48px 42px; }
@@ -339,6 +392,7 @@ h2 {
   .art-orbit { width: 245px; height: 245px; }
   .orbit-two { width: 300px; height: 300px; }
   .results-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .partnership-section { gap: 30px; padding: 32px; }
 }
 
 @media (max-width: 620px) {
@@ -361,6 +415,7 @@ h2 {
   .section-heading { align-items: start; gap: 12px; }
   .section-side-note { max-width: 150px; text-align: right; line-height: 1.6; }
   .results-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+  .partnership-section { grid-template-columns: 1fr; gap: 18px; margin-bottom: 38px; padding: 26px 21px; }
   .lotto-card { padding: 14px 9px 16px; }
   .balls { gap: 5px; }
   .ball { width: 32px; height: 32px; flex-basis: 32px; }
