@@ -79,6 +79,20 @@
           <button class="submit-button" type="submit">문의 보내기 <span aria-hidden="true">↗</span></button>
         </form>
       </section>
+
+      <section class="comments-section" aria-labelledby="comments-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">COMMUNITY</p>
+            <h2 id="comments-title">댓글</h2>
+          </div>
+          <p class="section-side-note">오늘의 번호와 서비스에 대한 이야기를 나눠보세요.</p>
+        </div>
+        <div class="comments-panel">
+          <div id="disqus_thread"></div>
+          <noscript>댓글을 보려면 JavaScript를 활성화해 주세요. <a href="https://disqus.com/?ref_noscript">Disqus 댓글 보기</a></noscript>
+        </div>
+      </section>
     </main>
 
     <footer class="footer">
@@ -87,5 +101,18 @@
     </footer>
   </div>
   <script src="main.js" defer></script>
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://firstaihtml.pages.dev/";
+      this.page.identifier = "luckypick-home";
+    };
+    (function () {
+      var d = document;
+      var s = d.createElement("script");
+      s.src = "https://productbuilder-3ijjsavg4y.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", String(Date.now()));
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
 </body>
 </html>

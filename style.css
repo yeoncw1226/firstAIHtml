@@ -385,6 +385,17 @@ h2 {
 .submit-button:hover { transform: translateY(-1px); background: var(--green-dark); }
 .submit-button:focus-visible { outline: 3px solid #e0aa48; outline-offset: 3px; }
 
+.comments-section { padding: 0 2px 58px; }
+.comments-panel {
+  min-height: 150px;
+  padding: 26px;
+  border: 1px solid #e6ece6;
+  border-radius: 18px;
+  background: rgb(255 255 255 / 72%);
+}
+.comments-panel noscript { color: var(--muted); font-size: 12px; }
+.comments-panel noscript a { color: var(--green); }
+
 @media (max-width: 900px) {
   .page-shell { width: min(760px, calc(100% - 40px)); }
   .hero { min-height: 410px; padding: 48px 42px; }
@@ -412,6 +423,8 @@ h2 {
   .sparkle-two { bottom: 10px; left: 12%; }
   .hero-index { right: 19px; bottom: 15px; }
   .results-section { padding: 39px 0 42px; }
+  .comments-section { padding: 0 0 42px; }
+  .comments-panel { padding: 18px 14px; }
   .section-heading { align-items: start; gap: 12px; }
   .section-side-note { max-width: 150px; text-align: right; line-height: 1.6; }
   .results-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
