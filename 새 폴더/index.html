@@ -5,113 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>로또 번호 추천</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #e0f7fa, #e8eaf6);
-      text-align: center;
-      padding: 30px 15px;
-      margin: 0;
-      color: #333;
-    }
-
-    .container {
-      max-width: 650px;
-      margin: 30px auto;
-      padding: 30px 20px;
-      background: white;
-      border-radius: 20px;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    }
-
-    h1 {
-      color: #3949ab;
-      margin-bottom: 10px;
-    }
-
-    .description {
-      color: #777;
-      margin-bottom: 25px;
-    }
-
-    button {
-      background: #3949ab;
-      color: white;
-      border: none;
-      padding: 14px 28px;
-      border-radius: 10px;
-      font-size: 17px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-
-    button:hover {
-      background: #283593;
-      transform: translateY(-2px);
-    }
-
-    #results {
-      margin-top: 30px;
-    }
-
-    .lotto-set {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 18px 0;
-    }
-
-    .set-label {
-      width: 100%;
-      font-weight: bold;
-      color: #555;
-      margin-bottom: 2px;
-    }
-
-    .ball {
-      width: 43px;
-      height: 43px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: bold;
-      font-size: 15px;
-      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.12);
-    }
-
-    .yellow { background: #fbc02d; color: #333; }
-    .blue   { background: #1976d2; }
-    .red    { background: #e53935; }
-    .gray   { background: #757575; }
-    .green  { background: #43a047; }
-
-    .notice {
-      margin-top: 25px;
-      color: #999;
-      font-size: 12px;
-    }
-
-    @media (max-width: 400px) {
-      .ball {
-        width: 36px;
-        height: 36px;
-        font-size: 13px;
-      }
-
-      .lotto-set {
-        gap: 6px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -121,7 +15,7 @@
       행운의 번호 5세트를 생성해 보세요!
     </p>
 
-    <button onclick="generateLotto()">
+    <button id="generate-button" type="button">
       🎲 번호 5세트 추천받기
     </button>
 
@@ -134,55 +28,7 @@
     </p>
   </div>
 
-  <script>
-    function generateLotto() {
-      const results = document.getElementById("results");
-      results.innerHTML = "";
-
-      for (let i = 1; i <= 5; i++) {
-        // 1부터 45까지 숫자 생성
-        const numbers = Array.from(
-          { length: 45 },
-          (_, index) => index + 1
-        );
-
-        // 숫자를 무작위로 섞기
-        for (let j = numbers.length - 1; j > 0; j--) {
-          const k = Math.floor(Math.random() * (j + 1));
-          [numbers[j], numbers[k]] = [numbers[k], numbers[j]];
-        }
-
-        // 6개 선택 후 오름차순 정렬
-        const lottoNumbers = numbers.slice(0, 6).sort((a, b) => a - b);
-
-        const set = document.createElement("div");
-        set.className = "lotto-set";
-
-        const label = document.createElement("div");
-        label.className = "set-label";
-        label.textContent = `${i}번째 추천 번호`;
-        set.appendChild(label);
-
-        lottoNumbers.forEach(number => {
-          const ball = document.createElement("div");
-          ball.className = "ball " + getBallColor(number);
-          ball.textContent = number;
-          set.appendChild(ball);
-        });
-
-        results.appendChild(set);
-      }
-    }
-
-    // 로또 번호 구간별 공 색상
-    function getBallColor(number) {
-      if (number <= 10) return "yellow";
-      if (number <= 20) return "blue";
-      if (number <= 30) return "red";
-      if (number <= 40) return "gray";
-      return "green";
-    }
-  </script>
+  <script src="script.js" defer></script>
 
 </body>
 </html>
