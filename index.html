@@ -1,34 +1,71 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>로또 번호 추천</title>
+  <meta name="theme-color" content="#f5f7f4">
+  <meta name="description" content="가볍게 즐기는 랜덤 로또 번호 추천 서비스">
+  <title>Lucky Pick — 로또 번호 추천</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="Lucky Pick 홈">
+        <span class="brand-mark" aria-hidden="true">✳</span>
+        <span>lucky<span class="brand-light">pick</span></span>
+      </a>
+      <span class="topbar-note"><span class="live-dot"></span> 오늘의 행운을 가볍게</span>
+    </header>
 
-  <div class="container">
-    <h1>🍀 로또 번호 추천</h1>
-    <p class="description">
-      행운의 번호 5세트를 생성해 보세요!
-    </p>
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span>LUCKY NUMBERS</span><span class="eyebrow-line"></span></p>
+          <h1 id="hero-title">오늘의 행운을<br><span>골라볼까요?</span></h1>
+          <p class="hero-description">작은 기대를 담아, 나만의 번호 조합을 만들어 보세요.</p>
+          <button id="generate-button" class="generate-button" type="button">
+            <span class="button-icon" aria-hidden="true">✦</span>
+            행운 번호 5세트 받기
+            <span class="button-arrow" aria-hidden="true">↗</span>
+          </button>
+          <p class="button-caption">1부터 45까지, 매번 새롭게 섞어요</p>
+        </div>
+        <div class="hero-art-wrap" aria-hidden="true">
+          <div class="art-orbit orbit-one"></div>
+          <div class="art-orbit orbit-two"></div>
+          <img class="hero-art" src="assets/lucky-balls.svg" alt="">
+          <span class="sparkle sparkle-one">✦</span>
+          <span class="sparkle sparkle-two">✧</span>
+        </div>
+        <div class="hero-index" aria-hidden="true">01 <span>/</span> 05</div>
+      </section>
 
-    <button id="generate-button" type="button">
-      🎲 번호 5세트 추천받기
-    </button>
+      <section class="results-section" aria-labelledby="results-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">YOUR PICKS</p>
+            <h2 id="results-title">추천 번호</h2>
+          </div>
+          <p class="section-side-note">각 세트는 서로 다른 6개의 숫자로 구성돼요.</p>
+        </div>
+        <div id="results" class="results-grid" aria-live="polite" aria-atomic="false">
+          <div class="empty-state">
+            <span class="empty-icon" aria-hidden="true">＋</span>
+            <p>버튼을 눌러 오늘의 번호를 만나보세요.</p>
+          </div>
+        </div>
+      </section>
+    </main>
 
-    <div id="results" aria-live="polite">
-      <p>버튼을 눌러 번호를 추천받으세요.</p>
-    </div>
-
-    <p class="notice">
-      ※ 추천 번호는 무작위이며 당첨을 보장하지 않습니다.
-    </p>
+    <footer class="footer">
+      <span>LUCKY PICK <span class="footer-dot">·</span> RANDOM NUMBER GENERATOR</span>
+      <span>※ 추천 번호는 무작위이며 당첨을 보장하지 않습니다.</span>
+    </footer>
   </div>
-
   <script src="main.js" defer></script>
-
 </body>
 </html>

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 420" fill="none">
+  <defs>
+    <linearGradient id="green" x1="58" x2="214" y1="60" y2="240" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#95D7A2"/><stop offset="1" stop-color="#3C9661"/>
+    </linearGradient>
+    <linearGradient id="coral" x1="250" x2="410" y1="40" y2="220" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFB39C"/><stop offset="1" stop-color="#E16E5C"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="172" x2="334" y1="174" y2="356" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFE28A"/><stop offset="1" stop-color="#EAB84D"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="325" x2="474" y1="174" y2="340" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#91C5EA"/><stop offset="1" stop-color="#548EBE"/>
+    </linearGradient>
+    <linearGradient id="cream" x1="67" x2="213" y1="225" y2="385" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF0C2"/><stop offset="1" stop-color="#E6C978"/>
+    </linearGradient>
+    <filter id="shadow" width="1.5" height="1.5" x="-.25" y="-.2" color-interpolation-filters="sRGB" filterUnits="objectBoundingBox">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="9"/><feOffset dy="11"/><feComponentTransfer><feFuncA slope=".18" type="linear"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <radialGradient id="shine" cx="0" cy="0" r="1" gradientTransform="matrix(94 86 -72 79 123 77)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff" stop-opacity=".7"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <ellipse cx="264" cy="365" fill="#7CA889" opacity=".13" rx="190" ry="24"/>
+  <g filter="url(#shadow)">
+    <circle cx="155" cy="142" r="91" fill="url(#green)"/>
+    <circle cx="155" cy="142" r="91" fill="url(#shine)"/>
+    <circle cx="332" cy="117" r="85" fill="url(#coral)"/>
+    <circle cx="332" cy="117" r="85" fill="url(#shine)" opacity=".7"/>
+    <circle cx="253" cy="259" r="101" fill="url(#gold)"/>
+    <circle cx="253" cy="259" r="101" fill="url(#shine)" opacity=".6"/>
+    <circle cx="408" cy="267" r="73" fill="url(#blue)"/>
+    <circle cx="408" cy="267" r="73" fill="url(#shine)" opacity=".65"/>
+    <circle cx="103" cy="287" r="65" fill="url(#cream)"/>
+    <circle cx="103" cy="287" r="65" fill="url(#shine)" opacity=".62"/>
+  </g>
+  <g fill="#fff" font-family="Arial,sans-serif" font-size="44" font-weight="700" text-anchor="middle">
+    <text x="155" y="158">7</text><text x="332" y="132">18</text><text x="253" y="274">24</text><text x="408" y="282">39</text>
+  </g>
+  <text x="103" y="299" fill="#755F2B" font-family="Arial,sans-serif" font-size="38" font-weight="700" text-anchor="middle">5</text>
+  <path d="m442 75 5 14 14 5-14 5-5 14-5-14-14-5 14-5 5-14Z" fill="#E5B552" opacity=".8"/>
+  <path d="m72 170 3 8 8 3-8 3-3 8-3-8-8-3 8-3 3-8Z" fill="#78A984" opacity=".75"/>
+  <circle cx="450" cy="164" r="4" fill="#85B391"/><circle cx="175" cy="365" r="4" fill="#E3B358"/><circle cx="363" cy="350" r="3" fill="#85B391"/>
+</svg>
