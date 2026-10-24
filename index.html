@@ -76,26 +76,6 @@
         </div>
       </section>
 
-      <section class="partnership-section" aria-labelledby="partnership-title">
-        <div class="partnership-intro">
-          <p class="section-kicker">LET'S WORK TOGETHER</p>
-          <h2 id="partnership-title">제휴 문의</h2>
-          <p>서비스 제휴 및 협업 제안을 보내주세요.<br>확인 후 빠르게 연락드리겠습니다.</p>
-        </div>
-        <form class="partnership-form" action="https://formspree.io/f/mnppqanr" method="POST">
-          <label for="partner-name">이름</label>
-          <input id="partner-name" name="name" type="text" autocomplete="name" placeholder="홍길동" required>
-
-          <label for="partner-email">이메일</label>
-          <input id="partner-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
-
-          <label for="partner-message">문의 내용</label>
-          <textarea id="partner-message" name="message" rows="4" placeholder="제휴 제안을 간단히 적어주세요." required></textarea>
-
-          <button class="submit-button" type="submit">문의 보내기 <span aria-hidden="true">↗</span></button>
-        </form>
-      </section>
-
       <section class="comments-section" aria-labelledby="comments-title">
         <div class="section-heading">
           <div>
@@ -108,6 +88,29 @@
           <div id="disqus_thread"></div>
           <noscript>댓글을 보려면 JavaScript를 활성화해 주세요. <a href="https://disqus.com/?ref_noscript">Disqus 댓글 보기</a></noscript>
         </div>
+      </section>
+
+      <section class="partnership-section" aria-labelledby="partnership-title">
+        <div class="partnership-intro">
+          <p class="section-kicker">LET'S WORK TOGETHER</p>
+          <h2 id="partnership-title">제휴 문의</h2>
+          <p>협업 제안을 보내주세요.</p>
+        </div>
+        <form class="partnership-form" action="https://formspree.io/f/mnppqanr" method="POST">
+          <div class="partnership-field">
+            <label for="partner-name">이름</label>
+            <input id="partner-name" name="name" type="text" autocomplete="name" placeholder="홍길동" required>
+          </div>
+          <div class="partnership-field">
+            <label for="partner-email">이메일</label>
+            <input id="partner-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+          </div>
+          <div class="partnership-field partnership-message-field">
+            <label for="partner-message">문의 내용</label>
+            <textarea id="partner-message" name="message" rows="2" placeholder="제휴 제안을 간단히 적어주세요." required></textarea>
+          </div>
+          <button class="submit-button" type="submit">문의 보내기 <span aria-hidden="true">↗</span></button>
+        </form>
       </section>
     </main>
 
