@@ -10,6 +10,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script>
+    try {
+      var savedTheme = localStorage.getItem("lucky-pick-theme");
+      var initialTheme = savedTheme || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.dataset.theme = initialTheme;
+      document.documentElement.style.colorScheme = initialTheme;
+    } catch (error) {
+      document.documentElement.dataset.theme = "light";
+    }
+  </script>
 </head>
 <body>
   <div class="page-shell">
@@ -18,7 +28,13 @@
         <span class="brand-mark" aria-hidden="true">✳</span>
         <span>lucky<span class="brand-light">pick</span></span>
       </a>
-      <span class="topbar-note"><span class="live-dot"></span> 오늘의 행운을 가볍게</span>
+      <div class="topbar-actions">
+        <span class="topbar-note"><span class="live-dot"></span> 오늘의 행운을 가볍게</span>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="다크모드로 전환" aria-pressed="false">
+          <span class="theme-toggle-icon" aria-hidden="true">☾</span>
+          <span class="theme-toggle-label">다크모드</span>
+        </button>
+      </div>
     </header>
 
     <main>
@@ -48,7 +64,7 @@
         <div class="section-heading">
           <div>
             <p class="section-kicker">YOUR PICKS</p>
-            <h2 id="results-title">추천 번호</h2>
+            <h2 id="results-title">추천 번호</h2>  
           </div>
           <p class="section-side-note">각 세트는 서로 다른 6개의 숫자로 구성돼요.</p>
         </div>

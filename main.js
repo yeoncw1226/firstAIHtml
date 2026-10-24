@@ -1,5 +1,33 @@
 const results = document.getElementById("results");
 const generateButton = document.getElementById("generate-button");
+const themeToggle = document.getElementById("theme-toggle");
+const themeToggleIcon = themeToggle.querySelector(".theme-toggle-icon");
+const themeToggleLabel = themeToggle.querySelector(".theme-toggle-label");
+const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+
+function setTheme(theme, persist = false) {
+  const isDark = theme === "dark";
+  document.documentElement.dataset.theme = theme;
+  document.documentElement.style.colorScheme = theme;
+  themeToggle.setAttribute("aria-pressed", String(isDark));
+  themeToggle.setAttribute("aria-label", `${isDark ? "화이트" : "다크"}모드로 전환`);
+  themeToggleIcon.textContent = isDark ? "☀" : "☾";
+  themeToggleLabel.textContent = `${isDark ? "화이트" : "다크"}모드`;
+  themeColorMeta.setAttribute("content", isDark ? "#111a15" : "#f5f7f4");
+
+  if (persist) {
+    try {
+      localStorage.setItem("lucky-pick-theme", theme);
+    } catch (error) {
+      // Private browsing may disable storage; the theme still applies for this page.
+    }
+  }
+}
+
+setTheme(document.documentElement.dataset.theme || "light");
+themeToggle.addEventListener("click", () => {
+  setTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark", true);
+});
 
 generateButton.addEventListener("click", generateLotto);
 
